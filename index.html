@@ -67,7 +67,7 @@
 
   pre {
     background: black;
-    padding: 1em 0 0;
+    padding: 1em;
     -webkit-border-radius: 1em;
     -moz-border-radius: 1em;
     border-radius: 1em;
@@ -134,7 +134,7 @@
 Para publicar sua aplicação Meteor.js siga as instruções abaixo
 </p>
 
-<strong>1. Baixe o repositório da sua aplicação OpenShift</strong>
+<h2>1. Baixe o repositório da sua aplicação OpenShift</h2>
 <p>
 Se você criou sua aplicação a partir do rhc, pule esta parte.
 Do contrário, baixe o repositório da aplicação com o seguinte comando:
@@ -142,29 +142,29 @@ Do contrário, baixe o repositório da aplicação com o seguinte comando:
 
 <pre>
 $ rhc git-clone &lt;app&gt;
-$ cd &lt;app&gt;
 </pre>
 
-<strong>2. Copie sua aplicação Meteor.js para a pasta meteor</strong>
-<p>
-$ cp /caminho/para/sua/app/meteorjs ./meteor
-<p>
+<h2>2. Copie sua aplicação Meteor.js para a pasta meteor</h2>
+<pre>
+$ cd &lt;app&gt;
+$ GLOBIGNORE=. && cp /sua/app/meteorjs/* meteor/
+</pre>
 
 <p>
 Se você ainda não possui uma aplicação Meteor.js, crie uma a partir de um exemplo:
 </p>
 <pre>
 $ meteor create --example leaderboard
-$ mv leaderboard meteor
+$ GLOBIGNORE=. && mv leaderboard/* meteor/
 </pre>
 
-<strong>3. Adicione a app no repositório</strong>
+<h2>3. Adicione a app no repositório</h2>
 <pre>
 $ git add .
 $ git commit -a -m "Codigo inicial meteor.js"
 </pre>
 
-<strong>4. Publique</strong>
+<h2>4. Publique</h2>
 <pre>
 $ git push
 </pre>

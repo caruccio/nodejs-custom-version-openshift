@@ -29,6 +29,6 @@ if [ -d "${OPENSHIFT_REPO_DIR}/meteor/.meteor" ]; then
 else
    echo
    echo "Meteor.js application not found."
-   echo "Copy your code into meteor/ folder and push again."
+   echo "Copy your code into meteor/ folder and push."
    echo
 fi
