@@ -40,7 +40,6 @@ if [ -z "${OPENSHIFT_MONGODB_DB_URL}" ]; then
    echo "rhc cartridge add -a $OPENSHIFT_APP_NAME -c mongodb-2.2" 1>&2
    echo "then make a sample commit (add whitespace somewhere) and re-push" 1>&2
    echo 1>&2
-   exit 5
 fi
 
 if [ ! -d "${METEOR_DIR}" ]; then
