@@ -1,4 +1,4 @@
-# Meteor no OpenShift Getup Cloud
+# Meteor no Getup Cloud OpenShift
 Este quickstart permite rodar uma aplicação Meteor.js no OpenShift da Getup Cloud.
 
 Para criar sua aplicação Meteor.js, primeiro vcê precisa registrar-se na Getup. Acesse http://getupcloud.com/#/sign-up e faça seu cadastro. Você recebe gratuitamente 750hs para testar a plataforma.
