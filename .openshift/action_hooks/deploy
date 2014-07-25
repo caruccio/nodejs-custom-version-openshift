@@ -14,3 +14,13 @@ source "$OPENSHIFT_REPO_DIR/.openshift/lib/utils"
 #  installed.
 ensure_node_is_installed
 
+# Create meteor bundle
+source "${OPENSHIFT_REPO_DIR}/.openshift/lib/setup_meteor_env"
+
+echo Creating Meteor.js bundle...
+cd ${OPENSHIFT_REPO_DIR}/meteor
+meteor bundle bundle.tar.gz
+
+echo Deploying Meteor.js bundle to ${OPENSHIFT_REPO_DIR}...
+tar xzf bundle.tar.gz --strip-components=1 -C ../
+rm -f bundle.tar.gz

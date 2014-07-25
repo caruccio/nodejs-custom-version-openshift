@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export METEOR_DIR=$OPENSHIFT_DATA_DIR/meteor
+export PATH="$METEOR_DIR/bin:$PATH"
+export METEOR_WAREHOUSE_DIR="$METEOR_DIR/.meteor"
