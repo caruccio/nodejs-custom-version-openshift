@@ -7,4 +7,6 @@ Para criar sua app, execute no terminal:
 
     rhc app-create meteor nodejs-0.6 mongodb-2.2 --from-code https://github.com/caruccio/openshift-meteorjs-quickstart.git
     
+> A versao do node é 0.6 mesmo, pois este cartucho é o que permite instalar qualquer versão, exatamente por ser o mais antigo.
+
 Acesse a URL [http://meteor-$namespace.getup.io](#) e siga as instruções para publicar seu código.
