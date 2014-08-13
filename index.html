@@ -147,7 +147,7 @@ $ rhc git-clone &lt;app&gt;
 <h2>2. Copie sua aplicação Meteor.js para a pasta meteor</h2>
 <pre>
 $ cd &lt;app&gt;
-$ GLOBIGNORE=. && cp /sua/app/meteorjs/* meteor/       # copia arquivo começados com .
+$ GLOBIGNORE=. && cp -r /sua/app/meteorjs/* meteor/  # inclui arquivos .*, menos "."
 </pre>
 
 <p>
@@ -155,7 +155,7 @@ Se você ainda não possui uma aplicação Meteor.js, crie uma a partir de um ex
 </p>
 <pre>
 $ meteor create --example leaderboard
-$ GLOBIGNORE=. && mv leaderboard/* meteor/      # move arquivo começados com .
+$ GLOBIGNORE=. && mv leaderboard/* meteor/  # inclui arquivos .*, menos "."
 $ rmdir leaderboard
 </pre>
 
