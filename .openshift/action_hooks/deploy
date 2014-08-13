@@ -17,8 +17,13 @@ ensure_node_is_installed
 # Create meteor bundle
 source "${OPENSHIFT_REPO_DIR}/.openshift/lib/setup_meteor_env"
 
-if [ -d "${OPENSHIFT_REPO_DIR}/meteor/.meteor" ]; then
+if [ ! -x "${METEOR_DIR}/bin/meteor" ]; then
+   echo Installing Meteor.js
+   curl https://install.meteor.com | sed -e 's/^PREFIX="\(.*\)"/PREFIX="${PREFIX:-\1}"/' | PREFIX="${METEOR_DIR}" HOME="${METEOR_DIR}" sh
+   echo "Meteor.js `meteor --version` installed"
+fi
 
+if [ -d "${OPENSHIFT_REPO_DIR}/meteor/.meteor" ]; then
    echo Creating Meteor.js bundle...
    cd ${OPENSHIFT_REPO_DIR}/meteor
    meteor bundle bundle.tar.gz

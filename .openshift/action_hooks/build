@@ -34,6 +34,8 @@ fi
 
 source "${OPENSHIFT_REPO_DIR}/.openshift/lib/setup_meteor_env"
 
+mkdir -p ${METEOR_DIR}/bin
+
 if [ -z "${OPENSHIFT_MONGODB_DB_URL}" ]; then
    echo 1>&2
    echo "MongoDB not found. Please run:" 1>&2
@@ -42,11 +44,3 @@ if [ -z "${OPENSHIFT_MONGODB_DB_URL}" ]; then
    echo 1>&2
 fi
 
-if [ ! -d "${METEOR_DIR}" ]; then
-   echo Installing Meteor.js
-   mkdir -p ${METEOR_DIR}/bin
-   curl https://install.meteor.com | sed -e 's/^PREFIX="\(.*\)"/PREFIX="${PREFIX:-\1}"/' | PREFIX="${METEOR_DIR}" HOME="${METEOR_DIR}" sh
-   echo "Meteor.js `meteor --version` installed"
-else
-   echo "Meteor.js `meteor --version` already installed"
-fi
