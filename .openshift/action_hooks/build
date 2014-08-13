@@ -45,7 +45,7 @@ fi
 if [ ! -d "${METEOR_DIR}" ]; then
    echo Installing Meteor.js
    mkdir -p ${METEOR_DIR}/bin
-   curl https://install.meteor.com | PREFIX="${METEOR_DIR}" HOME="${METEOR_DIR}" sh
+   curl https://install.meteor.com | sed -e 's/^PREFIX="\(.*\)"/PREFIX="${PREFIX:-\1}"/' | PREFIX="${METEOR_DIR}" HOME="${METEOR_DIR}" sh
    echo "Meteor.js `meteor --version` installed"
 else
    echo "Meteor.js `meteor --version` already installed"
